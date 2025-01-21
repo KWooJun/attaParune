@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.green.attaparune.user.reservation.UserReservationMapper">
+    <insert id="postReservation">
+        INSERT reservation
+           SET order_id = #{orderId}
+             , reservation_time = #{reservationTime}
+             , reservation_people_count = #{reservationPeopleCount}
+             , user_phone = #{userPhone}
+    </insert>
+</mapper>
