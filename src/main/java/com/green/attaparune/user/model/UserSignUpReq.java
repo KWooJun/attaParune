@@ -2,6 +2,7 @@ package com.green.attaparune.user.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,17 @@ public class UserSignUpReq {
     @JsonIgnore
     private long userId;
 
+    @JsonIgnore
+    private String pic;
+
+    @NotEmpty(message = "회사 PK 입력해주세요.")
+    @Schema(title = "회사 PK", example = "1", requiredMode = Schema.RequiredMode.REQUIRED)
+    private long companyId;
+
+    @NotEmpty
+    @Schema(title = "유저 아이디(회사번호 + 사원 번호)", example = "10000001")
+    private String uid;
+
     @NotEmpty(message = "사용자 이름을 입력해주세요.")
     @Schema(title = "사용자 이름", example = "홍길동", requiredMode = Schema.RequiredMode.REQUIRED)
     private String name;
@@ -24,14 +36,10 @@ public class UserSignUpReq {
     private String email;
 
     @NotEmpty(message = "비밀번호를 입력해주세요.")
-    @Schema(title = "사용자 비밀번호", example = "1234", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(title = "사용자 비밀번호", example = "qwer12#$", requiredMode = Schema.RequiredMode.REQUIRED)
     private String upw;
 
     @NotEmpty(message = "연락처를 입력해주세요.")
     @Schema(title = "사용자 연락처", example = "01012345678", requiredMode = Schema.RequiredMode.REQUIRED)
     private String phone;
-
-    private long companyId;
-
-    private String roleId = "ROLE_USER";
 }
