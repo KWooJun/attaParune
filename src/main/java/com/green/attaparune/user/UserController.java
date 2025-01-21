@@ -3,6 +3,7 @@ package com.green.attaparune.user;
 import com.green.attaparune.common.model.ResultResponse;
 import com.green.attaparune.user.model.UserSignInReq;
 import com.green.attaparune.user.model.UserSignInRes;
+import com.green.attaparune.user.model.UserSignUpReq;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -20,15 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private final UserService userService;
 
+    @PostMapping("sign-up")
+    @Operation(summary = "회원가입")
+    public ResultResponse<?> signUp(@RequestBody UserSignUpReq req) {
+        return userService.signUp(req);
+    }
+
     @PostMapping("sign-in")
     @Operation(summary = "로그인")
-    public ResultResponse<UserSignInRes> signIn(@RequestBody UserSignInReq p) {
-        UserSignInRes res = userService.signIn(p);
-
-        return ResultResponse.<UserSignInRes>builder()
-                .statusCode("200")
-                .resultMsg(res.getMessage())
-                .resultData(res)
-                .build();
+    public ResultResponse<?> signIn(@RequestBody UserSignInReq p) {
+        return userService.signIn(p);
     }
 }

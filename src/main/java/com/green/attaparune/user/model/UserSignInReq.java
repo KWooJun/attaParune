@@ -11,8 +11,8 @@ import lombok.ToString;
 @ToString
 @Schema(description = "회원 로그인 정보")
 public class UserSignInReq {
-    @Schema(description = "아이디", example = "test", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "아이디", example = "10000001", requiredMode = Schema.RequiredMode.REQUIRED)
     private String uid;
-    @Schema(description = "비밀번호", example = "1212", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "비밀번호", example = "qwer12#$", requiredMode = Schema.RequiredMode.REQUIRED)
     private String upw;
 }
