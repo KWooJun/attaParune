@@ -10,6 +10,7 @@ public class AdminService {
     private final AdminMapper adminMapper;
 
     public int adminSignUp(AdminSignUpReq p){
-        return adminMapper.insRestaurant(p);
+        int result = adminMapper.insAdmin(p);
+        return result;
     }
 }
