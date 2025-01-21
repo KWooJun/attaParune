@@ -5,5 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface AdminMapper {
-    int insRestaurant(AdminSignUpReq p);
+    int insAdmin(AdminSignUpReq p);
 }

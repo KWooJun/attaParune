@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.attaparune.admin.AdminMapper">
-    <insert id="insRestaurant">
+    <insert id="insAdmin">
         INSERT INTO `admin`
            SET `role_id` = #{roleId}
              , aid = #{aid}
